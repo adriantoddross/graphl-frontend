@@ -19,22 +19,23 @@ const client = new ApolloClient({
   link
 });
 
-client
-  .query({
-    query: gql`
-    {
-      books {
-        name
-        genre
-        author {
-          name
-          age
-        }
-      }
-    }
-  `
-  })
-  .then(result => console.log(result));
+// test query
+// client
+//   .query({
+//     query: gql`
+//     {
+//       books {
+//         name
+//         genre
+//         author {
+//           name
+//           age
+//         }
+//       }
+//     }
+//   `
+//   })
+//   .then(result => console.log(result));
   
   const Apollo = () => (
     <ApolloProvider client={client}>
