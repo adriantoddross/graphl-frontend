@@ -46,7 +46,7 @@ function AddBook() {
         </select>
       </div>
 
-      <button></button>
+      <button>Add New Book</button>
 
     </form>
     );
