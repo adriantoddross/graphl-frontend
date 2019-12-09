@@ -1,16 +1,7 @@
 import React from 'react';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
-
-
-const GET_AUTHORS =gql`
-{
-  authors {
-    name
-    id
-  }
-}
-`;
+import { GET_AUTHORS } from '../Queries/Queries';
 
 function AddAuthors () {
   const { loading, error, data } = useQuery(GET_AUTHORS);
