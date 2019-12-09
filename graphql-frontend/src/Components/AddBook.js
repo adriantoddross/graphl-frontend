@@ -19,7 +19,7 @@ function AddAuthors () {
   if (error) return `Error! ${error.message}`;
 
   return data.authors.map(({ name, id }) => (
-    <option key={id}>{name}</option>
+    <option key={ id } value={ id }>{name}</option>
   ));
 }
 
