@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { GET_AUTHORS } from '../Queries/Queries';
 
@@ -14,6 +14,24 @@ function AddAuthors () {
 }
 
 function AddBook() {
+
+  const [form, setState ] = useState({
+    name: '',
+    genre: '',
+    author: ''
+  });
+
+  const submitValues = e => {
+    e.preventDefault();
+    console.log(form.username, form.password);
+  };
+
+  const updateField = e => {
+    setState({
+      ...form,
+      [e.target.name]: e.target.value
+    });
+  };
 
     return (
       <form id="add-book">
