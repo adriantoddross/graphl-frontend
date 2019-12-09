@@ -11,7 +11,7 @@ const GET_BOOKS = gql`
   }
 `;
 
-function BookList ({ onBooksSelected }) {
+function BookList() {
   const { loading, error, data } = useQuery(GET_BOOKS);
 
   if (loading) return 'Loading...';
