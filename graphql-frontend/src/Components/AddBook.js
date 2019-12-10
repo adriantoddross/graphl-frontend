@@ -15,7 +15,7 @@ function AddAuthors () {
 
 function AddBook() {
 
-  const [form, setState ] = useState({
+  let [form, setState ] = useState({
     name: '',
     genre: '',
     author: ''
@@ -37,6 +37,7 @@ function AddBook() {
       <form id="add-book"
         onSubmit={submitValues}
       >
+
       <div className="field">
         <label>Book name:</label>
         <input type="text"
@@ -45,6 +46,7 @@ function AddBook() {
           onChange={updateField}
         />
       </div>
+
       <div className="field">
         <label>Genre:</label>
         <input type="text"
