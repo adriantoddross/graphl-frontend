@@ -23,7 +23,7 @@ function AddBook() {
 
   const submitValues = e => {
     e.preventDefault();
-    console.log(form.username, form.password);
+    console.log(form.name, form.genre, form.author);
   };
 
   const updateField = e => {
@@ -34,27 +34,41 @@ function AddBook() {
   };
 
     return (
-      <form id="add-book">
-
+      <form id="add-book"
+        onSubmit={submitValues}
+      >
       <div className="field">
         <label>Book name:</label>
-        <input type="text"/>
+        <input type="text"
+          name='name'
+          value={form.name}
+          onChange={updateField}
+        />
       </div>
-      
       <div className="field">
         <label>Genre:</label>
-        <input type="text"/>
+        <input type="text"
+          name='genre'
+          value={form.value}
+          onChange={updateField}
+        />
       </div>
 
       <div className="field">
         <label>Author:</label>
-        <select>
+        <select
+          name='author'
+          value={form.author}
+          onChange={updateField}
+        >
           <option>Select Author</option>
           {AddAuthors()}
         </select>
       </div>
 
-      <button>Add New Book</button>
+      <button
+        type='submit'
+      >Add New Book</button>
 
     </form>
     );
