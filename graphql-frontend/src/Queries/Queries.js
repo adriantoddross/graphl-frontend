@@ -1,5 +1,22 @@
 import { gql } from 'apollo-boost';
 
+const GET_BOOK = gql`
+  query($id: String) {
+    book (id: $id)
+    id
+    name
+    genre
+    author {
+      id
+      name
+      age
+      books {
+        name
+        id 
+      }
+    }
+  }
+`;
 
 const GET_BOOKS = gql`
   {
@@ -28,4 +45,4 @@ const ADD_BOOK =gql`
   }
 `;
 
-export {GET_BOOKS, GET_AUTHORS, ADD_BOOK};
+export {GET_BOOK, GET_BOOKS, GET_AUTHORS, ADD_BOOK};
